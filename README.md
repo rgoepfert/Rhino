@@ -1,4 +1,0 @@
-Rhino
-=====
-
-Word Association Game
