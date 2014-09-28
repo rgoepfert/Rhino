@@ -18,7 +18,7 @@ var getDist = function(term) { //prints out the distance between two terms
      }*/
      console.log(result);
      if (term.value == key) {
-     	resultString.innerHTML = "Entering the word again won't get you anywhere.";
+     	resultString.innerHTML = "Entering the same word won't get you anywhere.";
      }
      else if (result<=DISTANCE) {
      	resultString.innerHTML = "Good!";
@@ -70,6 +70,10 @@ var appendLink = function(term) {
 
 var increaseLinkLength = function() {
 	linkLength++;
+	displayLinkLength();
+}
+
+var displayLinkLength = function() {
 	document.getElementById("numLinks").innerHTML = "Number of Links: " + linkLength;
 }
 
@@ -91,4 +95,11 @@ var clearHighScore = function() {
 
 var displayHighScore = function() {
 	document.getElementById("high").innerHTML = "High Score: " + getHighScore();
+}
+
+var setup = function() {
+	printStart();
+	appendLink(getKey());
+	displayHighScore();
+	displayLinkLength();
 }

@@ -9,40 +9,48 @@
 
 </head>
 
-<body onload="javascript:printStart(); appendLink(getKey()); displayHighScore();">
+<body onload="javascript:setup();">
 
-<div>
+<header>
 
 	<h1>Rhino</h1>
 
 	<p>Word Association Game</p>
 
-</div>
+</header>
 
-<div>
-	<p id="start"></p>
+<aside class="left">
 
-	<font color="white">Enter a term</font> 
-	<input type="text" id="term"></input>
-	<button onclick="javascript:if (enable) getDist(term);">Try</button>
-
-</div><br>
-
-<div id="result"></div><br>
-
-<div id="numLinks"></div>
-
-<div id="links">
-	
-	<p>Your links:</p>
-
-</div>
-
-<div>
-
-	<p id="high"></p>
+	<div id="high"></div>
 	<button onclick="javascript:clearHighScore();">Clear High Score</button>
 
+</aside>
+
+<aside class="right">
+
+	<div id="numLinks"></div>
+
+</aside>
+
+<div>
+
+	<article>
+		<p id="start"></p>
+
+		<font color="white" size="3px">Enter a term</font> 
+		<input type="text" id="term"></input>
+		<button onclick="javascript:if (enable) getDist(term);">Try</button>
+
+	</article><br>
+
+	<div id="result"></div><br>
+<footer>
+	<div id="links">
+		
+		<p>Your links:</p>
+
+	</div>
+</footer>
 </div>
 
 </body>

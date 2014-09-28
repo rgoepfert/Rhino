@@ -15,4 +15,48 @@ h1 {
 div {
 	color:WHITE;
 	font-size: 30px;
+}	
+
+header {
+	background-color:blue;
+    color:white;
+    text-align:center;
+    font-size: 30px;
+    padding:0px;
+    /*float:center;*/
+}
+
+article {
+	background-color:red;
+    color:white;
+    text-align:center;
+    font-size: 30px;
+    /*float:center;*/
+}
+
+aside.left {
+	position: relative;
+    line-height:30px;
+    background-color:green;
+    height:100px;
+    /*width:150px;*/
+    padding:10px; 
+    float:left;
+        
+}
+
+aside.right {
+
+	position: relative;
+    line-height:30px;
+    background-color:green;
+    height:100px;
+    /*width:200px;*/
+    padding:10px;
+    float:right;
+    
+}
+
+footer {
+	background-color: yellow;
 }
