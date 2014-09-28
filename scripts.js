@@ -74,7 +74,7 @@ var increaseLinkLength = function() {
 }
 
 var displayLinkLength = function() {
-	document.getElementById("numLinks").innerHTML = "Number of Links: " + linkLength;
+	document.getElementById("numLinks").innerHTML = "Number of Links: " + "<br>" + linkLength;
 }
 
 var setHighScore = function(value) {
@@ -94,7 +94,7 @@ var clearHighScore = function() {
 }
 
 var displayHighScore = function() {
-	document.getElementById("high").innerHTML = "High Score: " + getHighScore();
+	document.getElementById("high").innerHTML = "High Score: " + "<br>" + getHighScore();
 }
 
 var setup = function() {

@@ -18,7 +18,7 @@ div {
 }	
 
 header {
-	background-color:blue;
+	background-color:black;
     color:white;
     text-align:center;
     font-size: 30px;
@@ -26,8 +26,16 @@ header {
     /*float:center;*/
 }
 
-article {
-	background-color:red;
+article.top {
+	background-color:black;
+    color:white;
+    text-align:center;
+    font-size: 30px;
+    /*float:center;*/
+}
+
+div.bottom {
+	background-color:black;
     color:white;
     text-align:center;
     font-size: 30px;
@@ -37,10 +45,12 @@ article {
 aside.left {
 	position: relative;
     line-height:30px;
-    background-color:green;
+    background-color:black;
     height:100px;
-    /*width:150px;*/
-    padding:10px; 
+    width:150px;
+    padding:50px;
+    padding-top:0px;
+    padding-bottom:0px;
     float:left;
         
 }
@@ -49,14 +59,17 @@ aside.right {
 
 	position: relative;
     line-height:30px;
-    background-color:green;
+    background-color:black;
     height:100px;
-    /*width:200px;*/
-    padding:10px;
+    width:200px;
+    padding:50px;
+    padding-top:0px;
+    padding-bottom:0px;
     float:right;
     
 }
 
-footer {
-	background-color: yellow;
+div.last{
+	background-color: black;
+	padding-bottom: 20px;
 }
