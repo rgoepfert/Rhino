@@ -39,7 +39,10 @@ var getDist = function(term) { //prints out the distance between two terms
      else {
      	resultString.innerHTML = "The term " + "'" + term.value + "'" + " is not close enough.";
      }
+  }, error: function() {
+ 		document.getElementById("result").innerHTML = "The term " + "'" + term.value + "'" + " is not related to " + "'" + key + "'" + ".";
   }
+
 
   });
 }
