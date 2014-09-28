@@ -11,7 +11,7 @@ var getDist = function(term) { //prints out the distance between two terms
       	console.log(data);
       	result=data['distance'];
 
-      	
+
      var resultString = document.getElementById("result");
      /*if (result == "NaN") {
      	resultString.innerHTML = "Not related."
@@ -26,6 +26,10 @@ var getDist = function(term) { //prints out the distance between two terms
      	setKey(term.value);
      	if (key == end) {
      		resultString.innerHTML = "You did it!"
+     		if (getHighScore() == "None")
+     			setHighScore(linkLength);
+     		else if (linkLength<getHighScore())
+     			setHighScore(linkLength);
      		enable = false;
      		return;
      	}
@@ -67,4 +71,24 @@ var appendLink = function(term) {
 var increaseLinkLength = function() {
 	linkLength++;
 	document.getElementById("numLinks").innerHTML = "Number of Links: " + linkLength;
+}
+
+var setHighScore = function(value) {
+	localStorage.setItem("highScore", value);
+	displayHighScore();
+}
+
+var getHighScore = function() {
+	if (localStorage.getItem("highScore") == null)
+		localStorage.setItem("highScore", "None");
+	return localStorage.getItem("highScore");
+}
+
+var clearHighScore = function() {
+	localStorage.clear();
+	displayHighScore();
+}
+
+var displayHighScore = function() {
+	document.getElementById("high").innerHTML = "High Score: " + getHighScore();
 }
