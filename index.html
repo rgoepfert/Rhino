@@ -9,7 +9,7 @@
 
 </head>
 
-<body onload="javascript:printStart(); appendLink(getKey());">
+<body onload="javascript:printStart(); appendLink(getKey()); displayHighScore();">
 
 <div>
 
@@ -35,6 +35,13 @@
 <div id="links">
 	
 	<p>Your links:</p>
+
+</div>
+
+<div>
+
+	<p id="high"></p>
+	<button onclick="javascript:clearHighScore();">Clear High Score</button>
 
 </div>
 
