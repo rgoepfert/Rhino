@@ -1,6 +1,6 @@
 var printStart = function() {
 
-	document.getElementById("start").innerHTML = "Find a link of words to go from " + start + " to " + end + ".";
+	document.getElementById("start").innerHTML = "Find a link of words to go from " + "'" + start +  "'" + " to " +  "'" + end +  "'" + ".";
 }
 
 var getDist = function(term) { //prints out the distance between two terms
@@ -139,3 +139,4 @@ var changeWords = function() {
 		end = "orange";
 	}
 }
+

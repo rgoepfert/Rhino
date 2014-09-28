@@ -38,8 +38,9 @@
 		<p id="start"></p>
 
 		<font color="white" size="3px">Enter a term</font> 
-		<input type="text" id="term"></input>
-		<button onclick="javascript:if (enable) getDist(term);">Try</button>
+		<input type="text" id="term" onkeydown="if (event.keyCode == 13) document.getElementById('theButton').click()" 
+				value="" onfocus="this.value=''"></input>
+		<button id="theButton" onclick="javascript:if (enable) getDist(term);">Try</button>
 
 
 	</article><br>
