@@ -37,7 +37,7 @@ var getDist = function(term) { //prints out the distance between two terms
 
      }
      else {
-     	resultString.innerHTML = "Not close enough.";
+     	resultString.innerHTML = "The term " + "'" + term.value + "'" + " is not close enough.";
      }
   }
 
@@ -65,7 +65,7 @@ var setKey = function(term) {
 }
 
 var appendLink = function(term) {
-	document.getElementById("links").innerHTML += "\n" + term;
+	document.getElementById("links").innerHTML += "\n" + "'" + term + "'";
 }
 
 var increaseLinkLength = function() {
@@ -78,14 +78,14 @@ var displayLinkLength = function() {
 }
 
 var setHighScore = function(value) {
-	localStorage.setItem("highScore", value);
+	localStorage.setItem("highScore"+String(getWords()), value);
 	displayHighScore();
 }
 
 var getHighScore = function() {
-	if (localStorage.getItem("highScore") == null)
-		localStorage.setItem("highScore", "None");
-	return localStorage.getItem("highScore");
+	if (localStorage.getItem("highScore"+String(getWords())) == null)
+		localStorage.setItem("highScore"+String(getWords()), "None");
+	return localStorage.getItem("highScore"+getWords());
 }
 
 var clearHighScore = function() {
@@ -98,8 +98,44 @@ var displayHighScore = function() {
 }
 
 var setup = function() {
-	printStart();
+	changeWords();
 	appendLink(getKey());
 	displayHighScore();
 	displayLinkLength();
+	printStart();
+}
+
+var getWords = function() {
+	return parseInt(localStorage.getItem("words"));
+}
+
+var cycleWords = function() {
+	//var words = parseInt(localStorage.getItem("words"));
+	localStorage.setItem("words", (getWords()+1)%3);
+	//words = (words+1)%3;
+	changeWords();
+	console.log("it did the thing");
+	location.reload();
+}
+
+var changeWords = function() {
+	//var words = parseInt(localStorage.getItem("words"));
+	if (localStorage.getItem("words")==null) {
+		localStorage.setItem("words", "0");
+	}
+	if (getWords()==0) {
+		start = "cat";
+		key = start;
+		end = "man";
+	}
+	if (getWords()==1) {
+		start = "hackathon";
+		key = start;
+		end = "Cornell";
+	}
+	if (getWords()==2) {
+		start = "statistic";
+		key = start;
+		end = "orange";
+	}
 }
