@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<script LANGUAGE="JavaScript" SRC="scripts.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<link rel="stylesheet" href="style.css">
-
+<style>
+	body {
+		background-color:MAGENTA;
+		text-align: center;
+	}
+	p {
+		color:CYAN;
+		font-size:30px;
+	}
+	h1 {
+		color:YELLOW;
+		font-size: 50px;
+	}
+</style>
 </head>
 
 <body>
 
 <div>
-
 	<h1>Rhino</h1>
 
 	<p>Word Association Game</p>
 
+	<a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
 </div>
 
-<div>
-	<p id="start">	<script type="text/javascript">printStart();</script> </p>
 
-	<font color="white">Enter a term</font> 
-	<input type="text" id="term"></input>
-	<button onclick="javascript:getDist(term);">Try</button>
+<p>Find 5 words closely related to XXX</p>>
 
-</div><br>
+<form action="">
+Guess: <input type="text" name="guess"><br>
+</form>
 
-<div id="result"></div>
+<p id="output">Your guess:</p><br>
 
-<div class="left">
-
-	<p>Your guess:</p>
-	<p id="output">test</p>
-
-</div>
-
-<div class="right" id="links">
-
-	<p>Your links:</p>
-
-</div>
-
+<script LANGUAGE="JavaScript" SRC="printGuess.js">
 
 </body>
 </html>
