@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body onload="javascript:printStart(); appendLink(getKey());">
 
 <div>
 
@@ -20,29 +20,23 @@
 </div>
 
 <div>
-	<p id="start">	<script type="text/javascript">printStart();</script> </p>
+	<p id="start"></p>
 
 	<font color="white">Enter a term</font> 
 	<input type="text" id="term"></input>
-	<button onclick="javascript:getDist(term);">Try</button>
+	<button onclick="javascript:if (enable) getDist(term);">Try</button>
 
 </div><br>
 
-<div id="result"></div>
+<div id="result"></div><br>
 
-<div class="left">
+<div id="numLinks"></div>
 
-	<p>Your guess:</p>
-	<p id="output">test</p>
-
-</div>
-
-<div class="right" id="links">
-
+<div id="links">
+	
 	<p>Your links:</p>
 
 </div>
-
 
 </body>
 </html>
