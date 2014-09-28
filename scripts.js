@@ -92,7 +92,7 @@ var getHighScore = function() {
 }
 
 var clearHighScore = function() {
-	localStorage.clear();
+	localStorage.setItem("highScore"+String(getWords()), "None");
 	displayHighScore();
 }
 
