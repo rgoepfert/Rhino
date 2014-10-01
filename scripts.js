@@ -53,11 +53,24 @@ var linkLength = 0;
 
 var start = "cat";
 
-var key = "cat";
+var key = start;
 
 var end = "man";
 
 var enable = true;
+
+var list = [
+	"banana",
+	"War World Two",
+	"crater",
+	"moon",
+	"England",
+	"Chuck Norris",
+	"opera",
+	"Oprah Winfrey",
+	"time",
+	"We Will Rock You"
+];
 
 var getKey = function() {
 	return key;
@@ -81,18 +94,18 @@ var displayLinkLength = function() {
 }
 
 var setHighScore = function(value) {
-	localStorage.setItem("highScore"+String(getWords()), value);
+	localStorage.setItem("highScore"+start+end, value);
 	displayHighScore();
 }
 
 var getHighScore = function() {
-	if (localStorage.getItem("highScore"+String(getWords())) == null)
-		localStorage.setItem("highScore"+String(getWords()), "None");
-	return localStorage.getItem("highScore"+getWords());
+	if (localStorage.getItem("highScore"+start+end) == null) //String(getWords())) == null)
+		localStorage.setItem("highScore"+start+end, "None"); //(getWords()), "None");
+	return localStorage.getItem("highScore"+start+end); //getWords());
 }
 
 var clearHighScore = function() {
-	localStorage.setItem("highScore"+String(getWords()), "None");
+	localStorage.setItem("highScore"+start+end, "None");
 	displayHighScore();
 }
 
@@ -101,11 +114,17 @@ var displayHighScore = function() {
 }
 
 var setup = function() {
+	//if (getWords()!=-1)
 	changeWords();
 	appendLink(getKey());
 	displayHighScore();
 	displayLinkLength();
 	printStart();
+}
+
+var setRandomWords = function() {
+	localStorage.setItem("words", -1);
+	location.reload();
 }
 
 var getWords = function() {
@@ -114,17 +133,35 @@ var getWords = function() {
 
 var cycleWords = function() {
 	//var words = parseInt(localStorage.getItem("words"));
-	localStorage.setItem("words", (getWords()+1)%3);
+	localStorage.setItem("words", (getWords()+1)%4);
 	//words = (words+1)%3;
 	changeWords();
 	console.log("it did the thing");
 	location.reload();
 }
 
+var randomWord = function() {
+	return list[Math.floor(Math.random()*10)];
+}
+
 var changeWords = function() {
 	//var words = parseInt(localStorage.getItem("words"));
 	if (localStorage.getItem("words")==null) {
 		localStorage.setItem("words", "0");
+	}
+	if (getWords()==-1) {
+		var a = "";
+		var b = "";
+		while (a==b) {
+			a = randomWord();
+			b = randomWord();
+		}
+		console.log(a);
+		console.log(b);
+		start = a;
+		key = start;
+		end = b;
+		//localStorage.setItem("words", "-1");//randomSetup();
 	}
 	if (getWords()==0) {
 		start = "cat";
@@ -140,6 +177,47 @@ var changeWords = function() {
 		start = "statistic";
 		key = start;
 		end = "orange";
+	
+	}
+	if (getWords()==3) {
+		start = "Abraham Lincoln";
+		key = start;
+		end = "Steve Jobs";
 	}
 }
 
+var reset = function() {
+	location.reload();
+}
+
+var list = [
+	"banana",
+	"World War II",
+	"crater",
+	"moon",
+	"England",
+	"Chuck Norris",
+	"opera",
+	"Barak Obama",
+	"clock",
+	"We Will Rock You"
+];
+
+
+/*
+var randomSetup = function() {
+	var a;
+	var b;
+	while (a==b) {
+		a = randomWord();
+		b = randomWord();
+	}
+	console.log(a);
+	console.log(b);
+	start = a;
+	key = start;
+	end = b;
+	localStorage.setItem("words", "-1");
+	reset();
+}
+*/
